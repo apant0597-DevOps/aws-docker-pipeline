@@ -25,7 +25,7 @@ artifacts:
   files: 
       - imagedefinitions.json
       - appspec.yml
-      - scripts/deploy_docker.sh
+      - scripts/deploy_docker
 
 env:
   variables:
