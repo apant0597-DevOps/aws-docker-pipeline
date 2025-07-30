@@ -8,7 +8,7 @@ phases:
       - echo $AWS_DEFAULT_REGION
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - REPOSITORY_URI=$ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/apant0597/docker-pipeline
-      - IMAGE_TAG=1.0.0.$CODEBUILD_BUILD_NUMBER
+      - IMAGE_TAG=10000+$CODEBUILD_BUILD_NUMBER
   build:
     commands:
       - echo Build started on `date`
