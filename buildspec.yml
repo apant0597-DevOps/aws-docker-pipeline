@@ -21,6 +21,12 @@ phases:
       - echo write definitions file...
       - printf '[{"name":"docker-pipeline","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 
+artifacts:
+  files: 
+      - imagedefinitions.json
+      - appspec.yml
+      - scripts/deploy_docker.sh
+
 env:
   variables:
     ACCOUNT_ID: "339712798271"
