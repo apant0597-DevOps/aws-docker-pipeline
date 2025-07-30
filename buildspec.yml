@@ -17,6 +17,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - docker image ls
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo write definitions file...
       - printf '[{"name":"docker-pipeline","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
